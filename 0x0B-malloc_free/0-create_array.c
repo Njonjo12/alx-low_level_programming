@@ -2,31 +2,27 @@
 #include <stdlib.h>
 
 /**
- * create_array - a program that creates a dynamic memory allocation
- * filled with a specific character c .
- * @size : size of an array.
- * @c: character.
- * Return: pointer to the Array or NULL if it fails.
+ * create_array - creates an array of chars.
+ * @size: size of the array.
+ * @c: storaged char
+ *
+ * Return: pointer of an array of chars
  */
-
 char *create_array(unsigned int size, char c)
 {
-char *pointer;
-unsigned int i;
+	char *cr;
+	unsigned int i;
 
-if (size == 0)
-	return (NULL);
-pointer = malloc(sizeof(char) * size);
-/*
- * Allocating a specific nb of bytes on the memory
- * and returning a pointer to the allocated memory
- */
-if (pointer == NULL)
-	return (NULL);
-else
-{
+	if (size == 0)
+		return (NULL);
+
+	cr = malloc(sizeof(c) * size);
+
+	if (cr == NULL)
+		return (NULL);
+
 	for (i = 0; i < size; i++)
-		pointer[i] = c;
-		return (pointer);
-}
+		cr[i] = c;
+
+	return (cr);
 }
